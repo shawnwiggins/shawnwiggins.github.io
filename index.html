@@ -40,6 +40,9 @@
   h6 {
     font-family: Helvetica, sans-serif;
   }
+  .object-fit-cover {
+    object-fit: cover;
+  }
 </style>
 
 </head>
@@ -48,9 +51,9 @@
   <div class="container col-xxl-8 px-4 py-2">
 
     <div class="row flex-lg-row-reverse py-5">
-      <div class="col-10 col-sm-8 col-lg-6 d-flex">
-        <img src="./img/shawn_bw.jpg" class="d-none d-lg-block mx-lg-auto img-fluid"
-          alt="Shawn standing above the ocean" width="400" loading="lazy">
+      <div class="col-10 col-sm-8 col-lg-6 d-none d-lg-flex align-items-stretch">
+        <img src="./img/shawn_bw.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+          alt="Shawn standing above the ocean" loading="lazy">
       </div>
       <div class="col-md-6 col-lg-6">
         <img class="pb-5" src="./img/CCSF LOGO.png" width="150px" alt="CCSF Logo">
