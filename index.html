@@ -28,12 +28,11 @@
 
     body {
       font-family: 'Roboto Mono', monospace;
-      background-color:whitesmoke;
+      background-color: whitesmoke;
     }
 
     h1 {
       font-family: 'Comforter', sans-serif;
-
     }
 
     h2,
@@ -48,22 +47,40 @@
       object-fit: cover;
     }
 
+    /* Scroll margin for all anchored course sections */
     [id^="MATH-"],
     [id^="STAT-"] {
+      scroll-margin-top: 2rem;
+    }
+
+    /* Scroll margin for semester headings used as scrollspy targets */
+    [id^="spring-"],
+    [id^="fall-"] {
       scroll-margin-top: 2rem;
     }
 
     html {
       scroll-behavior: smooth;
     }
+
+    /* Sticky sidebar nav */
+    #navbar {
+      top: 1rem;
+    }
+
+    .nav-pills .nav-link.nav-sublink {
+      padding-left: 1.5rem;
+      font-size: 0.875rem;
+    }
   </style>
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+<body>
 
   <div class="container col-xxl-8 px-4 py-2">
 
+    <!-- Hero / bio row -->
     <div class="row flex-lg-row-reverse py-5">
       <div class="col-10 col-sm-8 col-lg-6 d-none d-lg-flex align-items-stretch">
         <img src="./img/shawn_bw.jpg" class="img-fluid w-100 h-100 object-fit-cover"
@@ -78,7 +95,9 @@
         </h1>
         <p>Shawn Wiggins has been an instructor within the
           <a href="https://ccsf.edu/math" target="_blank">Mathematics Department</a> at City College of San Francisco
-          since 2014. In addition to teaching, he serves as the Interim Department Chairperson and actively contributes to the college's Open Educational Resources (<a href="https://library.ccsf.edu/oer" target="_blank">OER</a>) initiatives.
+          since 2014. In addition to teaching, he serves as the Interim Department Chairperson and actively contributes
+          to the college's Open Educational Resources (<a href="https://library.ccsf.edu/oer" target="_blank">OER</a>)
+          initiatives.
         </p>
         <address>
           Office: <a href="https://maps.app.goo.gl/HMxEwEQzgS3HrqPy8" target="_blank">Batmale Hall</a> Room 756<br>
@@ -88,35 +107,42 @@
       </div>
     </div>
 
-    <div class="row flex-row-reverse py-5">
-      <!-- Navigation
-      <div class="col-4">
-        <nav id="navbar" class="h-100 flex-column align-items-stretch px-4 border-start position-sticky">
+    <!-- Courses row -->
+    <div class="row py-5">
 
-          <nav class="nav nav-pills flex-column position-sticky top-0">
-            <h2>Courses</h2>
-            <a class="nav-link scrollspy-example" href="#MATH-108">MATH 108</a>
+      <!-- Sticky sidebar navigation -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <nav id="navbar" class="px-3 border-start position-sticky">
+          <nav class="nav nav-pills flex-column">
+            <h2 class="fs-6 text-uppercase text-muted mb-2">Courses</h2>
+
+            <a class="nav-link" href="#spring-2026">Spring 2026</a>
+            <a class="nav-link nav-sublink" href="#MATH-108-spring">MATH 108</a>
+
+            <a class="nav-link mt-2" href="#fall-2026">Fall 2026</a>
+            <a class="nav-link nav-sublink" href="#MATH-108-fall">MATH 108</a>
           </nav>
         </nav>
       </div>
-      -->
 
-      <div class="col-12">
-        <!-- Div for scrollspy
-        <div id="scrollspy-container" data-bs-target="#navbar" data-bs-smooth-scroll="true"
-          class="scrollspy-example position-relative" tabindex="0"> -->
+      <!-- Main content -->
+      <div class="col-12 col-lg-9">
 
-                  <div style="margin-bottom: 40px">
-
-          <h2>Spring 2026</h2>
+        <!-- ── Spring 2026 ── -->
+        <div style="margin-bottom: 40px">
+          <h2 id="spring-2026">Spring 2026</h2>
           <hr>
-          <div id="MATH-108">
+          <div id="MATH-108-spring">
             <h3 class="fs-2">MATH 108 Foundations of Data Science</h3>
-            <div class="pb-4"><a href="https://www.ccsf.edu/academics/online-learning/online-classes"
-                target="_blank">Online Hybrid</a> | <a
-                href="https://www.ccsf.edu/courses/spring-2026/foundations-data-science-34245" target="_blank">CRN
-                34245</a> | SEC 962 | <a href="https://maps.app.goo.gl/1Dwo3d8JJsJGavxBA" target="_blank">Chinatown/North Beach Center</a> | Room 1405 | Wednesdays 6:10 - 8:25
-              pm</div>
+            <div class="pb-4">
+              <a href="https://www.ccsf.edu/academics/online-learning/online-classes" target="_blank">Online Hybrid</a>
+              | <a href="https://www.ccsf.edu/courses/spring-2026/foundations-data-science-34245"
+                target="_blank">CRN 34245</a>
+              | SEC 962
+              | <a href="https://maps.app.goo.gl/1Dwo3d8JJsJGavxBA" target="_blank">Chinatown/North Beach Center</a>
+              | Room 1405
+              | Wednesdays 6:10 – 8:25 pm
+            </div>
             <h4>Catalog Description</h4>
             <p>Foundations of Data Science combines an introductory look into the fundamental skills and concepts of
               computer programming and inferential statistics with hands-on experience in analyzing datasets by using
@@ -132,23 +158,83 @@
               <li>Make predictions using machine learning techniques such as clustering and linear regression.</li>
             </ol>
             <button class="btn btn-outline-dark" type="button"
-              onclick="window.open('https://ccsf.instructure.com/courses/70280', '_blank')">Canvas Shell (Public View Availble Until February 13th)</button>
-             <button class="btn btn-outline-dark" type="button"
+              onclick="window.open('https://ccsf.instructure.com/courses/70280', '_blank')">Canvas Shell (Public View
+              Available Until February 13th)</button>
+            <button class="btn btn-outline-dark" type="button"
               onclick="window.open('https://ccsf.simplesyllabus.com/api2/doc-pdf/4tk5as7od/SPRING-2026-MATH-108-962-Foundations-of-Data-Science.pdf?locale=en-US', '_blank')">Syllabus</button>
-
-
           </div>
-          
-
         </div>
 
-      </div>
+        <!-- ── Fall 2026 ── -->
+        <div style="margin-bottom: 40px">
+          <h2 id="fall-2026">Fall 2026</h2>
+          <hr>
+          <div id="MATH-108-fall">
+            <h3 class="fs-2">MATH 108 Foundations of Data Science</h3>
+            <div class="pb-4">
+              <a href="https://www.ccsf.edu/academics/online-learning/online-classes" target="_blank">Online Hybrid</a>
+              | <a href="https://www.ccsf.edu/courses/fall-2026/foundations-data-science-70950"
+                target="_blank">CRN 70950</a>
+              | SEC 963
+              | <a href="https://maps.app.goo.gl/1Dwo3d8JJsJGavxBA" target="_blank">Chinatown/North Beach Center</a>
+              | Room 1405
+              | Time 6:10 - 8:26 pm
+            </div>
+            <h4>Catalog Description</h4>
+            <p>Foundations of Data Science combines an introductory look into the fundamental skills and concepts of
+              computer programming and inferential statistics with hands-on experience in analyzing datasets by using
+              common tools within the industry. Additionally, the course investigates ethical issues surrounding Data
+              Science, such as data privacy.</p>
+            <h4>Student Learning Outcomes</h4>
+            <ol>
+              <li>Communicate the statistical analysis of real world data using multiple representations such as
+                graphs, text, and tables, being mindful of concerns around data bias and privacy.</li>
+              <li>Write computer scripts to organize, produce visualizations, and numerically summarize data.</li>
+              <li>Infer population information using tools from inferential statistics based on random sample data
+                generated using computational techniques such as iteration.</li>
+              <li>Make predictions using machine learning techniques such as clustering and linear regression.</li>
+            </ol>
+            <button class="btn btn-outline-dark" type="button" disabled>Canvas Shell (Coming Soon)</button>
+            <button class="btn btn-outline-dark" type="button" disabled>Syllabus (Coming Soon)</button>
+          </div>
+        </div>
 
-    </div>
-  </div>
+      </div><!-- /col -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
-</body>
 
+  <script>
+    // Lightweight manual scrollspy — highlights nav links as sections scroll into view.
+    // Bootstrap's built-in scrollspy requires the scrollable container to be the element
+    // with data-bs-spy, but here the body itself scrolls, so we wire it up manually.
+    const navLinks = document.querySelectorAll('#navbar .nav-link');
+
+    const sectionIds = [...navLinks].map(link => link.getAttribute('href').slice(1));
+    const sections   = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    function onScroll() {
+      const scrollY = window.scrollY + 80; // offset for sticky nav height
+      let current = sections[0]?.id ?? '';
+
+      for (const section of sections) {
+        if (section.offsetTop <= scrollY) {
+          current = section.id;
+        }
+      }
+
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + current;
+        link.classList.toggle('active', isActive);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run once on load
+  </script>
+
+</body>
 </html>
